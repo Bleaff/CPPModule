@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 17:52:14 by bleaf             #+#    #+#             */
-/*   Updated: 2022/10/25 17:52:14 by bleaf            ###   ########.fr       */
+/*   Created: 2022/10/25 16:40:54 by bleaf             #+#    #+#             */
+/*   Updated: 2022/10/25 17:52:47 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#include "HumanA.hpp"
 
-#include <iostream>
+HumanA:: HumanA(std::string name, Weapon &wp): _wp(wp), _name(name){}
 
-class Weapon
+HumanA::~HumanA(){}
+
+void HumanA::attack()   
 {
-private:
-    std::string _type;
-public:
-    Weapon(/* args */);
-    Weapon(std::string type);
-    ~Weapon();
-    std::string getType();
-    void setType( std::string type );
-};
-
-#endif
+    std::cout << this->_name << " attacks with their " << (this->_wp).getType() << std::endl;
+}

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 17:52:14 by bleaf             #+#    #+#             */
-/*   Updated: 2022/10/25 17:52:14 by bleaf            ###   ########.fr       */
+/*   Created: 2022/10/25 17:43:13 by bleaf             #+#    #+#             */
+/*   Updated: 2022/10/25 17:52:30 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-
-class Weapon
+HumanB::HumanB(std::string name)
 {
-private:
-    std::string _type;
-public:
-    Weapon(/* args */);
-    Weapon(std::string type);
-    ~Weapon();
-    std::string getType();
-    void setType( std::string type );
-};
+    this->_name = name;
+    this->_wp = NULL;
+}
+HumanB::HumanB(){}
 
-#endif
+HumanB::~HumanB(){}
+
+void HumanB::attack()
+{
+    std::cout << this->_name << " attacks with their " << this->_wp->getType() << std::endl;
+}
+
+void HumanB::setWeapon(Weapon &wp)
+{
+    this->_wp = &wp;
+}
