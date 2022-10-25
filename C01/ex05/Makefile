@@ -6,11 +6,11 @@
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 21:32:00 by bleaf             #+#    #+#              #
-#    Updated: 2022/10/25 22:34:22 by bleaf            ###   ########.fr        #
+#    Updated: 2022/10/25 22:40:43 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= main.cpp Inputer.cpp
+SRCS			= main.cpp Harl.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= clang++
@@ -32,6 +32,6 @@ fclean:			clean
 re:				fclean $(NAME)
 
 leakage: $(NAME)
-		leaks --atExit -- ./$(NAME) checker "re" "AIAIAIAIAAAAAAAA_____________"
+		leaks --atExit -- ./$(NAME)
 
 .PHONY:			all clean fclean re
