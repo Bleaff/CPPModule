@@ -6,7 +6,7 @@
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 21:32:00 by bleaf             #+#    #+#              #
-#    Updated: 2022/10/25 22:40:43 by bleaf            ###   ########.fr        #
+#    Updated: 2022/10/26 17:37:43 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXX				= clang++
 RM				= rm -f
 CXXFLAGS		= -std=c++98 -Wall -Wextra -Werror -I.
 
-NAME			= sed_is_for_losers
+NAME			= harl2.0
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
