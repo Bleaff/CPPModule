@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:28:09 by bleaf             #+#    #+#             */
-/*   Updated: 2022/10/29 01:29:04 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/10/29 02:02:46 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
+    std::cout << ">Classic constructor called" << std::endl;
     this->name = "defaultName";
     this->hit_points = 10;
     this->energy_points = 10;
