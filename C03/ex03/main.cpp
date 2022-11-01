@@ -6,30 +6,18 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 20:49:56 by bleaf             #+#    #+#             */
-/*   Updated: 2022/11/01 13:16:31 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/11/01 16:48:32 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	std::cout << "Now you will witness an incident in a bar between Django and the target he has been hunting for 3 months." << std::endl;
-	ClapTrap *greengo = new ScavTrap("Django");
-	greengo->attack("$5,000 goal");
-	ScavTrap goal("$5,000 goal");
-	goal.takeDamage(greengo->getAD());
-	goal.attack("Django");
-	greengo->takeDamage(goal.getAD());
-	goal.takeDamage(greengo->getAD() * 5);
-	goal.beRepaired(30);
-	delete greengo;
-	ScavTrap s("S");
-	s.attack("ad");
-	s.guardGate();
-	s.takeDamage(500);
-	s.beRepaired(10);
-	s.attack("Sany");
+	DiamondTrap dt("Dinny");
+	dt.whoAmI();
+	std::cout << dt.getAD() << " - attack damage, " << dt.getEP() << "- energy points, " << dt.getHP() << "- hit points." << std::endl;
+	dt.attack("Someone");
 	return (0);
 }

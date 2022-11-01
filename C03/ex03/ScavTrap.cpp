@@ -6,42 +6,47 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:28:09 by bleaf             #+#    #+#             */
-/*   Updated: 2022/11/01 13:18:26 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/11/01 16:47:33 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name)
+ScavTrap::ScavTrap(void)
 {
-    std::cout << ">>Classic constructor ScavTrap called" << std::endl;
+    std::cout << "ScavTrap >> Classic constructor called" << std::endl;
+    this->hit_points = 100;
+    this->energy_points = 50;
+    this->attack_damage = 20;
+    this->name = "Default";
+    this->gateMode = false;
+}
+
+ScavTrap::ScavTrap(std::string _name): ClapTrap(_name)
+{
+    std::cout << "ScavTrap >> Classic name constructor ScavTrap called" << std::endl;
     this->hit_points = 100;
     this->energy_points = 50;
     this->attack_damage = 20;
     this->gateMode = false;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &other)
+ScavTrap::ScavTrap(ScavTrap const &other) : ClapTrap(other)
 {
-    std::cout << ">>Coping constructor ScavTrap called" << std::endl;
-    this->name = other.getName();
-    this->attack_damage = other.getAD();
-    this->hit_points = other.getHP();
-    this->energy_points = other.getEP();
+    std::cout << "ScavTrap >> Coping constructor ScavTrap called" << std::endl;
     this->gateMode = other.getGate();
 }
 
-ScavTrap::~ScavTrap(){std::cout << ">>Destructor ScavTrap called" << std::endl;}
+ScavTrap::~ScavTrap(){std::cout << "ScavTrap >> Destructor ScavTrap called" << std::endl;}
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
-    std::cout << ">>Operator = called" << std::endl;
+    std::cout << "ScavTrap >> Operator = called" << std::endl;
     this->name = other.getName();
     this->attack_damage = other.getAD();
     this->hit_points = other.getHP();
     this->energy_points = other.getEP();
-    this->gateMode = other.getGate();
-    return (*this);
+    return (*this); 
 }
 
 void ScavTrap::attack(const std::string& target)

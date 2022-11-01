@@ -6,13 +6,13 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 19:28:09 by bleaf             #+#    #+#             */
-/*   Updated: 2022/11/01 14:35:46 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/11/01 14:25:12 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap(void)
 {
     std::cout << ">Classic constructor called" << std::endl;
     this->name = "defaultName";
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string _name) : name(_name)
 {
-    std::cout << ">Classic constructor called" << std::endl;
+    std::cout << ">Classic name constructor called" << std::endl;
     this->hit_points = 10;
     this->energy_points = 10;
     this->attack_damage = 0;
@@ -32,10 +32,13 @@ ClapTrap::ClapTrap(std::string _name) : name(_name)
 ClapTrap::ClapTrap(ClapTrap const &other)
 {
     std::cout << ">Coping constructor called" << std::endl;
-    *this = other;
+    this->name = other.getName();
+    this->attack_damage = other.getAD();
+    this->hit_points = other.getHP();
+    this->energy_points = other.getEP();
 }
 
-ClapTrap::~ClapTrap(){std::cout << ">Classic destructor called" << std::endl;}
+ClapTrap::~ClapTrap(void){std::cout << ">Classic destructor called" << std::endl;}
 
 int ClapTrap::getHP(void) const
 {
