@@ -21,7 +21,7 @@ Animal::~Animal(void){std::cout << "Default animal destructor called!" << std::e
 
 std::string Animal::getType(void) const {return (this->type);}
 
-void Animal::makeSound(void)
+void Animal::makeSound(void) const
 {
 	std::cout << "Animal makes sound!" << std::endl;
 }
