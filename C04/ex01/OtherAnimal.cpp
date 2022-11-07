@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:52:51 by bleaf             #+#    #+#             */
-/*   Updated: 2022/11/03 17:24:31 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/11/07 21:09:44 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,32 @@ void Cat::makeSound(void) const
 
 Cat::Cat()
 {
-    this->brainzzz = new Brain();
     std::cout << "Cat-constructor (basic)" << std::endl;
+    this->brainzzz = new Brain();
     this->type = "Cat";
 }
 
-Cat::Cat(Cat const & other)
+Cat::Cat(Cat const & other):Animal(other)
 {
-    this->brainzzz = other.brainzzz;
     std::cout << "Cat-constructor (coping)" << std::endl;
+    this->brainzzz = new Brain();
     *this = other;
 }
 
 Cat::~Cat()
 {
-    delete this->brainzzz;
     std::cout << "Cat-destructor (basic)" << std::endl;
+    delete this->brainzzz;
 }
 
 Cat & Cat::operator=(Cat const &rhs)
 {
-    this->brainzzz = rhs.brainzzz;
-    this->type = rhs.getType();
+    if (this != &rhs)
+    {
+        delete brainzzz;
+        this->brainzzz = new Brain(*rhs.getBrain());
+        this->type = rhs.getType();
+    }
     return (*this);
 }
 
@@ -56,22 +60,36 @@ Dog::Dog()
     this->type = "Dog";
 }
 
-Dog::Dog(Dog const & other)
+Dog::Dog(Dog const & other):Animal(other)
 {
-    this->brainzzz = other.brainzzz;
     std::cout << "Dog-constructor (coping)" << std::endl;
+    this->brainzzz = new Brain();
     *this = other;
 }
 
 Dog::~Dog()
 {
-    delete this->brainzzz;
     std::cout << "Dog-destructor (basic)" << std::endl;    
+    delete this->brainzzz;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
 {
-    this->brainzzz = rhs.brainzzz;
-    this->type = rhs.getType();
+    if (this != &rhs)
+    {
+        delete this->brainzzz;
+        this->brainzzz = new Brain(*rhs.getBrain());
+        this->type = rhs.getType();
+    }
     return (*this);
+}
+
+Brain *Cat::getBrain(void) const
+{
+    return (this->brainzzz);
+}
+
+Brain *Dog::getBrain(void) const
+{
+    return (this->brainzzz);
 }

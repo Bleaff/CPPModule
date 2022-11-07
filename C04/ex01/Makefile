@@ -6,7 +6,7 @@
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 21:32:00 by bleaf             #+#    #+#              #
-#    Updated: 2022/11/03 17:25:13 by bleaf            ###   ########.fr        #
+#    Updated: 2022/11/07 17:29:45 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,5 +30,8 @@ fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
+
+leaks:			$(NAME)
+				leaks --atExit -- ./$(NAME)
 
 .PHONY:			all clean fclean re

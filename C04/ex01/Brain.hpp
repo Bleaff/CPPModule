@@ -10,7 +10,7 @@ class Brain
 		Brain(Brain const & other);
 		~Brain();
 		Brain &operator=(Brain const &rhs);
-        std::string *idias;
+        std::string idias[100];
 };
 
 

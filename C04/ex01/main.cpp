@@ -4,44 +4,29 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	std::cout << std::endl;
-	delete meta;
+	Animal *aniray[50];
+	for (size_t i = 0; i < 50; i++)
+	{
+		if (i % 2)
+			aniray[i] = new Cat();
+		else
+			aniray[i] = new Dog();
+	}
+	for (size_t i = 0; i < 50; i++)
+		aniray[i]->makeSound();
+	for (size_t i = 0; i < 50; i++)
+		delete aniray[i];
 	delete j;
 	delete i;
-	std::cout << std::endl;
-	std::cout << "______________________Wrong one_____________________________" << std::endl;
-	std::cout << std::endl;
-	const WrongAnimal *wa = new WrongAnimal();
-	const WrongAnimal *wc = new WrongCat();
-	std::cout << std::endl;
-	std::cout << wa->getType() << " " << std::endl;
-	std::cout << wc->getType() << " " << std::endl;
-	std::cout << std::endl;
-	std::cout <<  "Wrong animal voice -> " << std::endl;
-	wa->makeSound();
-	std::cout <<  "Wrong cat voice -> " << std::endl;
-	wc->makeSound();
-	std::cout << std::endl;
-	delete wc;
-	delete wa;
-	std::cout << std::endl;
-	Dog *d = new Dog();
+	std::cout << "Afterthouths\n";
+	Dog ba;
 	{
-		Dog g;
-		g = *d;
-		(void)g;
+		Dog b = ba;
 	}
-	d->makeSound();
-	delete d;
+	Dog c(ba);
+
+	std::cout << "Afterthouths\n";
 	return 0;
 }
