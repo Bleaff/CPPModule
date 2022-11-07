@@ -6,7 +6,7 @@
 /*   By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 13:52:51 by bleaf             #+#    #+#             */
-/*   Updated: 2022/11/07 21:10:23 by bleaf            ###   ########.fr       */
+/*   Updated: 2022/11/07 21:18:10 by bleaf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat::Cat()
     this->type = "Cat";
 }
 
-Cat::Cat(Cat const & other):Animal(other)
+Cat::Cat(Cat const & other):AAnimal(other)
 {
     std::cout << "Cat-constructor (coping)" << std::endl;
     this->brainzzz = new Brain();
@@ -60,7 +60,7 @@ Dog::Dog()
     this->type = "Dog";
 }
 
-Dog::Dog(Dog const & other):Animal(other)
+Dog::Dog(Dog const & other):AAnimal(other)
 {
     std::cout << "Dog-constructor (coping)" << std::endl;
     this->brainzzz = new Brain();
