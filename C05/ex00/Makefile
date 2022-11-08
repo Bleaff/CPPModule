@@ -6,18 +6,18 @@
 #    By: bleaf <bleaf@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/24 21:32:00 by bleaf             #+#    #+#              #
-#    Updated: 2022/10/24 21:32:00 by bleaf            ###   ########.fr        #
+#    Updated: 2022/11/03 16:35:49 by bleaf            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS			= main.cpp PhoneBook.cpp Contact.cpp
+SRCS			= main.cpp Animal.cpp OtherAnimal.cpp WrongAnimal.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CXX				= c++
 RM				= rm -f
 CXXFLAGS		= -std=c++98 -Wall -Wextra -Werror -I.
 
-NAME			= PhoneBook
+NAME			= Polymorphism
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
