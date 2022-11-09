@@ -1,0 +1,23 @@
+{
+	"files.associations": {
+		"__locale": "cpp",
+		"__threading_support": "cpp",
+		"bitset": "cpp",
+		"compare": "cpp",
+		"ios": "cpp",
+		"istream": "cpp",
+		"locale": "cpp",
+		"ostream": "cpp",
+		"streambuf": "cpp",
+		"string": "cpp",
+		"type_traits": "cpp",
+		"__bit_reference": "cpp",
+		"__mutex_base": "cpp",
+		"__tuple": "cpp",
+		"atomic": "cpp",
+		"string_view": "cpp",
+		"system_error": "cpp",
+		"tuple": "cpp",
+		"variant": "cpp"
+	}
+}
